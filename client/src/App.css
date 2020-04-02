@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+}
+
+a.covid-map-link{
+  font-weight: 800;
+  color: rgb(202, 8, 193);
+  outline: none;
+  transition: 0.6s ease-in-out;
+}
+a.covid-map-link:hover{
+ color: purple;
+}
+
+.covid-footer{
+  padding: 20px 0;
+  margin: 20px 0;
+}
