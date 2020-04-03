@@ -67,9 +67,9 @@ const fetchData = async ()=>{
 //
 // ─── SINGLE API ROUTE ───────────────────────────────────────────────────────────────
     
-app.get('/cov19/v1/', (req, res)=>{
+app.get('/cov19/v1/', async (req, res)=>{
     //*** Fetch data
-    fetchData();
+   await fetchData();
     if(dataCov.length > 0){
        return res.status(200).json({
             success: true,
