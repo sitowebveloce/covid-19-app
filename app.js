@@ -79,8 +79,11 @@ app.get('/cov19/v1/', async (req, res)=>{
                 return 0;
             }),
             data: dataCov.sort(function(a, b){
-                if(a.attributes.Country_Region < b.attributes.Country_Region) { return -1; }
-                if(a.attributes.Country_Region > b.attributes.Country_Region) { return 1; }
+                // if(a.attributes.Country_Region < b.attributes.Country_Region) { return -1; }
+                // if(a.attributes.Country_Region > b.attributes.Country_Region) { return 1; }
+                // return 0;
+                if(a.attributes.Deaths < b.attributes.Deaths) { return 1; }
+                if(a.attributes.Deaths > b.attributes.Deaths) { return -1; }
                 return 0;
             })
         });    

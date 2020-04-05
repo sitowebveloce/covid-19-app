@@ -4,6 +4,11 @@ import Search from './Search';
 import axios from 'axios';
 // import HomeIcon from '@material-ui/icons/Home';
 import { makeStyles } from '@material-ui/core/styles';
+import Chart from './Chart';
+import Loader from './Load';
+
+import './Chart.css'
+
 
 // Styles
 const useStyles = makeStyles({
@@ -15,15 +20,17 @@ const useStyles = makeStyles({
     },
     homeBtn: {
         cursor:'pointer',
-        padding:'10px'
+        padding:'5px'
     },
     maxValue:{
-        color:'red',
         display:'grid',
         gridTemplateColumns:'1fr',
         gridTemplateRows:'1fr 1fr',
         alignItems:'left',
         gridGap:'5px'
+    },
+    a :{
+        textDecoration: 'none'
     }
   });
 
@@ -50,7 +57,7 @@ const fetchFromBackEnd = async () =>{
         // console.log(res.data);
         // Set State
         // All data
-        setDataArr(res.data);
+       setDataArr(res.data);
         // Max deaths value
         setMaxVal(res.maxDeaths)
     }
@@ -122,20 +129,26 @@ let domObj = dataArr.map((c, indx) =>{
     
     return (
         <div className={classes.root}>
-           {/* <a href="/"> <HomeIcon className={classes.homeBtn}/></a> */}
+           {/* <a href="/catalog"> <HomeIcon className={classes.homeBtn}/></a>  */}
            <a href="/" className={classes.homeBtn}> <span role='img' aria-label='reload'>🔃</span></a>
+        <div>
+            <small><b className='thanks-mike'> thanks Mike Bostock</b></small>
+        </div>
     <div className={classes.maxValue}>
         <div>
-     <b> Country: </b> {maxVal !== undefined && maxVal.length > 0 ? 
-    (`${maxVal[0].country} `) : null}
+     <b> Country: </b> <span className='first-country'> {maxVal !== undefined && maxVal.length > 0 ? 
+    (`${maxVal[0].country} `) : null} </span>
     </div>
     <div>
-     <b> Max Deaths: </b> {maxVal !== undefined && maxVal.length > 0 ? 
-    (`${maxVal[0].value}`) : null}
+     <b> Max Deaths: </b> <span className='max-deaths'> {maxVal !== undefined && maxVal.length > 0 ? 
+    (`${maxVal[0].value}`) : null} </span> <span><small className='approx-numb'>(approximate number)</small></span>
     </div>
     </div>
      <Search search={search} setSearch={setSearch} />
-            {domObj}
+
+     <Chart data={maxVal !== undefined ? maxVal : []}/>
+
+            {dataArr.length > 0 ? domObj : <Loader />}
     </div>
     )
 }

@@ -6,7 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Simple app to see the corona virus world spread situation constantly updated.
 On top you can see the first country max deaths.
-You can search by country to see the current situation.
+
+I just added a simple loader effect, and a chart data visualization 
+of the infection using d3.
+I changed the data order, now are ordered by country max deaths.
+
+The project is realized using this tech:
+- BackEnd NodeJ
+- FrontEnd React Hooks
+- Data visualization d3
 
 
 In the project directory, you can run:

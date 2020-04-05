@@ -1,0 +1,54 @@
+g > text{
+font-weight: bold;
+padding-left: ;
+color: rebeccapurple;
+padding: 5px !important;
+margin: 4px;
+transition: 0.9s ease-in-out;
+}
+g > text:hover {
+    transform: scale(1.8) !important;
+}
+
+b.thanks-mike{
+    font-size: 0.6rem;
+    color: purple;
+}
+
+span.first-country{
+    color: red;
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+ span.max-deaths{
+    color: red;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.approx-numb {
+    font-size: 0.5em;
+}
+
+/* MEDIA QUERY  */
+@media (max-width: 718px){
+    svg{
+        /* display: none; */
+        width: 480px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1000px){
+    svg{
+        /* display: none; */
+        width: 660px;
+        margin: 0 auto;
+    }
+}
